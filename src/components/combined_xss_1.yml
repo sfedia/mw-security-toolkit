@@ -1,0 +1,10 @@
+component-id: combined_xss_1
+vector-id: pwd+etc vector
+meta-vector-id: xss
+requirements:
+  env-variables:
+    - fast_load_part
+    - jquery_part
+build:
+  recipe: from_js_source
+  source-name: combined_xss_1.js
