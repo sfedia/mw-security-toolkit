@@ -1,0 +1,12 @@
+component-id: append_to_page
+vector-id: testing
+meta-vector-id: xss
+requirements:
+  env-variables:
+    - target_page
+    - negative_pattern
+    - urlenc_appended_content
+    - mw_website_prefix
+build:
+  recipe: from_js_source
+  source-name: append_to_page.js

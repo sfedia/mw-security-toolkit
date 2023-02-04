@@ -7,9 +7,14 @@ except ImportError:
 
 
 class Component:
-    def __init__(self, component_id):
+    def __init__(self, component_id, definition=None, content=None, **kwargs):
         self.component_id = component_id
-        self.definition = self.define()
+        self.definition = self.define() if not definition else definition
+        self.content = self.build(**kwargs) if not content else content
+    
+    @property
+    def build_recipe(self):
+        return self.definition["build"]["recipe"]
     
     def define(self):
         all_components = os.listdir("../src/components")
@@ -27,5 +32,21 @@ class Component:
             if "requirements" in self.definition:
                 if "env-variables" in self.definition["requirements"]:
                     for var in self.definition["requirements"]["env-variables"]:
-                        source_file = source_file.replace(f"%%{var}%%", kwargs[var])
+                        repl = kwargs[var]
+                        if isinstance(repl, Component):
+                            repl = str(repl)
+                        source_file = source_file.replace(f"%%{var}%%", repl)
             return source_file
+    
+    def __add__(self, comp2):
+        if self.build_recipe == comp2.build_recipe and self.build_recipe == "from_js_source":
+            return Component(
+                f"{self.component_id}+{comp2.component_id}",
+                definition={"type": "auto_concat"},
+                content = self.content + "\n" + comp2.content
+            )
+        else:
+            raise ValueError
+    
+    def __str__(self):
+        return self.content
