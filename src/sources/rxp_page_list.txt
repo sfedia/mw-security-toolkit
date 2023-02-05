@@ -7,3 +7,4 @@ User:Kilgore/common.js
 User:Natural/common.js
 User:Stamm/common.js
 User:Бульдозер/common.js
+User:Korolev/common.js
