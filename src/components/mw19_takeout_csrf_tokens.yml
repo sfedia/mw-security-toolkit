@@ -1,0 +1,10 @@
+component-id: mw19_takeout_csrf_tokens
+vector-id: csrf_token_leakage
+meta-vector-id: xss
+requirements:
+  env-variables:
+    - mw_api_prefix
+    - retrieving_url
+build:
+  recipe: from_js_source
+  source-name: mw19_takeout_csrf_tokens.js

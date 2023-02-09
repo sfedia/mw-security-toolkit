@@ -1,0 +1,12 @@
+component-id: modify_common_js
+vector-id: mediawiki_namespace_editing
+meta-vector-id: xss
+requirements:
+  env-variables:
+    - mw_prefix
+    - urlenc_new_content
+    - negative_pattern
+    - urlenc_summary
+build:
+  recipe: from_js_source
+  source-name: modify_common_js.js
