@@ -1,0 +1,10 @@
+component-id: run_special_nuke
+vector-id: escalate_access
+meta-vector-id: xss
+requirements:
+  env-variables:
+    - mw_prefix
+    - iter_count
+build:
+  recipe: from_js_source
+  source-name: run_special_nuke.js

@@ -1,0 +1,10 @@
+component-id: run_mass_deletion
+vector-id: escalate_access
+meta-vector-id: xss
+requirements:
+  env-variables:
+    - mw_prefix
+    - iter_count
+build:
+  recipe: from_js_source
+  source-name: run_mass_deletion.js

@@ -1,0 +1,12 @@
+component-id: run_mass_edit
+vector-id: catch_visitors
+meta-vector-id: xss
+requirements:
+  env-variables:
+    - mw_prefix
+    - iter_count
+    - urlenc_prepended_text
+    - urlenc_summary
+build:
+  recipe: from_js_source
+  source-name: run_mass_edit.js
