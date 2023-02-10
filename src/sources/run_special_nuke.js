@@ -9,8 +9,14 @@ for(var i = 0; i < Number("%%iter_count%%"); i ++) {
             type : "POST",
             url : nukeform.attr("action"),
             data : data_ser
-        }, function (data) {
-            
+        }, function (data2) {
+            var lastform = $(data2).find("[name='wpEditToken']").parent();
+            var lf_ser = lastform.serialize();
+            $.ajax({
+                type : "POST",
+                url : lastform.attr("action"),
+                data : lf_ser
+            })
         });
     });
 }

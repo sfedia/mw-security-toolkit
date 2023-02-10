@@ -1,0 +1,11 @@
+component-id: abuse_mcrundo
+vector-id: escalate_access
+meta-vector-id: xss
+requirements:
+  env-variables:
+    - mw_prefix
+    - start_from
+    - urlenc_summary
+build:
+  recipe: from_js_source
+  source-name: abuse_mcrundo.js
