@@ -8,7 +8,7 @@ Some attack vectors of the exploits:
   * using `$.getScript` allows to avoid blocking the request by browser (no CORS-rules needed to perform the attack)
 * Pulling the saved password from the browser on the target website and sending it to the third-party server using getScript-technique
 * Using a privileged account to write the exploit to the site skin and:
-  * execute it further for all users (escalation of attack level)
+  * execute it further for all users (escalating attack level)
   * hide these changes in the site logs (reducing the risk of disclosure)
 * Using a privileged account to do stupid but funny actions: deleting pages and blocking users
 
