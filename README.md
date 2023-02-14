@@ -3,6 +3,7 @@ At the moment, the repository contains some my exploits that allow disrupting th
 
 These exploits can be applied if you manage to make an [XSS-injection](https://en.wikipedia.org/wiki/Cross-site_scripting) on a MediaWiki-driven website, which is especially easy for versions prior to 1.35.
 
+Some attack vectors of the exploits:
 * Stealing CSRF-tokens and sending them to any server on a third-party domain that accepts GET-requests
   * using `$.getScript` allows to avoid blocking the request by browser (no CORS-rules needed to perform the attack)
 * Pulling out the browser-saved password for a website and sending it to the 3rd-party server using getScript-technique
